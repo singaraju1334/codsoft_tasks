@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Innovate Tech Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f9fafc;
+      color: #222222;
+      line-height: 1.6;
+    }
+    a {
+      color: #0b3d91;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #053a6b;
+    }
+
+    /* Header */
+    header {
+      background-color: #0b3d91;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(11, 61, 145, 0.3);
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 30px;
+    }
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+    }
+    nav ul li a:hover {
+      color: #f0f0f0;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      background: linear-gradient(135deg, #0b3d91 40%, #222222 90%);
+      color: white;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 1.3px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      color: #d0d8f9;
+      font-weight: 500;
+    }
+    .btn {
+      cursor: pointer;
+      padding: 14px 38px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      margin: 0 12px;
+      display: inline-block;
+      min-width: 140px;
+    }
+    .btn-primary {
+      background-color: #f7f9fc;
+      color: #0b3d91;
+      border: 2px solid transparent;
+    }
+    .btn-primary:hover {
+      background-color: #d9e1f5;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid #f7f9fc;
+      color: #f7f9fc;
+    }
+    .btn-secondary:hover {
+      background-color: #f7f9fc;
+      color: #0b3d91;
+      border-color: #0b3d91;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 40px;
+      background-color: white;
+      flex-wrap: wrap;
+    }
+    .feature {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background: #f0f4ff;
+      border-radius: 14px;
+      padding: 30px 25px;
+      box-shadow: 0 4px 15px rgba(11, 61, 145, 0.1);
+      text-align: center;
+      color: #0b3d91;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(11, 61, 145, 0.25);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .feature-text {
+      font-weight: 400;
+      font-size: 0.95rem;
+      margin-top: 5px;
+      color: #222222;
+    }
+
+    /* About Section */
+    #about {
+      display: flex;
+      gap: 50px;
+      padding: 60px 40px;
+      align-items: center;
+      background: #222222;
+      color: white;
+      flex-wrap: wrap;
+    }
+    #about .about-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+    #about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-weight: 400;
+      color: #d0d0d0;
+    }
+    #about .about-img {
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: center;
+    }
+    #about img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Services Section */
+    #services {
+      padding: 60px 40px;
+      background-color: #f9fafc;
+      text-align: center;
+    }
+    #services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0b3d91;
+      font-weight: 700;
+    }
+    .service-list {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+    }
+    .service-box {
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+      border-radius: 16px;
+      padding: 30px 25px;
+      max-width: 280px;
+      color: #222222;
+      transition: transform 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 30px rgba(11, 61, 145, 0.15);
+    }
+    .service-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: #0b3d91;
+    }
+    .service-desc {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #444444;
+    }
+
+    /* Team Section */
+    #team {
+      background-color: #222222;
+      padding: 60px 40px;
+      color: white;
+      text-align: center;
+    }
+    #team h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .team-list {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .team-member {
+      background: #0b3d91;
+      border-radius: 14px;
+      padding: 25px 20px;
+      max-width: 220px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+    }
+    .team-member:hover {
+      background-color: #053a6b;
+    }
+    .team-member h3 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .team-member p {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #d3d9f2;
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: white;
+      padding: 50px 40px;
+      text-align: center;
+      color: #222222;
+    }
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #0b3d91;
+      font-weight: 700;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+    #contact a {
+      color: #0b3d91;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0b3d91;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.6px;
+      box-shadow: 0 -2px 8px rgba(11, 61, 145, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #about {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+      #about .about-text,
+      #about .about-img {
+        max-width: 100%;
+      }
+      .features,
+      .service-list,
+      .team-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Innovate Tech Solutions</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Innovate. Build. Grow.</h1>
+      <p>Your partner for intelligent technology solutions that empower your business.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">Get Started</button>
+      <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">Learn More</button>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      Rapid & Reliable Deployment
+      <div class="feature-text">Efficient tech delivery to get you up and running fast.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤝</div>
+      Client-Centered Approach
+      <div class="feature-text">Solutions designed around your unique business needs.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      Secure & Scalable
+      <div class="feature-text">Robust technology built to grow safely with you.</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        At Innovate Tech Solutions, we believe technology should simplify, not complicate.
+        With over 10 years of experience, our dedicated team crafts custom solutions that drive growth and efficiency.
+        We combine deep technical expertise with creative problem-solving to deliver products that truly make a difference.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Team collaborating" />
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-box">
+        <div class="service-title">Custom Software Development</div>
+        <div class="service-desc">Tailored software solutions to fit your exact business goals and scale with you.</div>
+      </div>
+      <div class="service-box">
+        <div class="service-title">Cloud & Infrastructure</div>
+        <div class="service-desc">Secure, scalable cloud services to keep your data and apps safe and accessible.</div>
+      </div>
+      <div class="service-box">
+        <div class="service-title">Data & Analytics</div>
+        <div class="service-desc">Leverage insights and analytics to make smarter, data-driven decisions.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Meet the Team</h2>
+    <div class="team-list">
+      <div class="team-member">
+        <h3>Anika Roy</h3>
+        <p>CEO & Visionary</p>
+      </div>
+      <div class="team-member">
+        <h3>David Kim</h3>
+        <p>Lead Developer</p>
+      </div>
+      <div class="team-member">
+        <h3>Maya Patel</h3>
+        <p>Design Lead</p>
+      </div>
+      <div class="team-member">
+        <h3>Liam Johnson</h3>
+        <p>Marketing Head</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:contact@innovatetech.com">contact@innovatetech.com</a></p>
+    <p>Phone: +1 (555) 123-4567</p>
+    <p>Address: 123 Innovation Drive, Tech City, USA</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Innovate Tech Solutions. All rights reserved.
+  </footer>
+</body>
+</html>
